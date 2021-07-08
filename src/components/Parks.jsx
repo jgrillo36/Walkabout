@@ -4,7 +4,13 @@ import { useSelector, useDispatch } from 'react-redux';
 
 const Parks = () => {
     //global state variable 
-    const count = useSelector(state => state.template.counter);
+    const recentSearches = useSelector(state => state.recentSearch);
+
+    console.log(recentSearches);
+    
+    return <>
+        Favorite Parks
+    </>
 }
 
 

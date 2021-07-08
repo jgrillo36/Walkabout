@@ -3,41 +3,37 @@ import { LOCATION } from "../actionTypes";
 const intialState =
  
     { 
-        recentSearch: {
-            1001: {
-                parkCode: '',
-                fullName: '',
-                stateCode: '',
-
-            },
-                        
-        },
+        recentSearch: [],
     }
 
 
-const locationReducer =(state = intialState, action) => { console.log(action)
+const locationReducer = (state = intialState, action) => { 
+
+    console.log('ACTION FIRING: ', action);
+    
     switch(action.type){
-        case LOCATION:{
-            const {parkCode,fullName,stateCode,id} = action.payload
+        case LOCATION: {
+            const {id} = action.payload;
+            const newRecentSearch = state.recentSearch.slice();
+            const alreadyExists = newRecentSearch.find(park => {
+                return park.id === id;
+            });
+
+            if(alreadyExists){
+                // pass
+            } else {
+                newRecentSearch.push(action.payload);
+            }
             
             return {
-
-                ...state.recentSearch,
-                    [id]:{
-                    parkCode,
-                    fullName,
-                    stateCode,
-                },
-
+                ...state,
+                recentSearch: newRecentSearch
             }
-
         }
-            
-         default: return state;
+        
+        default: return state;
     }
-
-
+            
 }
 
-
-export default locationReducer
+export default locationReducer;

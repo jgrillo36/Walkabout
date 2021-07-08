@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import { connect } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setLocation } from '../redux/actions'; 
 
-export const Results = (props) => {
-    console.log('resultProps', props)
+const Results = (props) => {
+    const dispatch = useDispatch();
     const{parks}= props
     // const [parkId,setparkId] = useState('')
     // const [fullName,setfullName] = useState('')
@@ -11,12 +11,12 @@ export const Results = (props) => {
     // const[parkCode,setparkcode]  = useState ('')
     const handleClick= (id,fullName,parkCode,stateCode) => { 
         console.log('buttonClick',id,fullName,parkCode,stateCode)
-        setLocation({ 
+        dispatch(setLocation({ 
             id: id,
             fullName: fullName,
             parkCode: parkCode,
             stateCode: stateCode,
-         })
+        }));
 
     }
   
@@ -50,9 +50,8 @@ export const Results = (props) => {
     )
 }
 
+export default Results;
 
-
-export default connect(null, {setLocation})(Results)
 // {/* <div class="card border-2 cardshadow" style="width: 18rem; margin: 0.3em;">
         //    <img class="card-img-top" height=150px width=200px src="${event.image}" alt="Card image cap">
         //     <div class="card-body">
