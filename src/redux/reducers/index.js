@@ -1,22 +1,38 @@
 
 import { LOCATION } from "../actionTypes";
-const intialState = {
-    lat: 0,
-    lon: 0,
-    city: "",
-    stat: "",
-}
+const intialState =
+ 
+    { 
+        recentSearch: {
+            1001: {
+                parkCode: '',
+                fullName: '',
+                stateCode: '',
 
-const locationReducer =(state = intialState, action) => {
+            },
+                        
+        },
+    }
+
+
+const locationReducer =(state = intialState, action) => { console.log(action)
     switch(action.type){
-        case LOCATION:
+        case LOCATION:{
+            const {parkCode,fullName,stateCode,id} = action.payload
+            
             return {
-                ...state,
-                lat: action.payload.lat,
-                lon: action.payload.lon,
-                city: action.payload.city,
-                stat: action.payload.stat,
-         }
+
+                ...state.recentSearch,
+                    [id]:{
+                    parkCode,
+                    fullName,
+                    stateCode,
+                },
+
+            }
+
+        }
+            
          default: return state;
     }
 

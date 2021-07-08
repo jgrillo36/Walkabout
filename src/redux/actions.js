@@ -1,12 +1,14 @@
 import { LOCATION } from "./actionTypes";
-export const setLocation =({lat,lon,city,stat}) =>{
+export const setLocation =({id,fullName,parkCode,stateCode}) =>{
+    console.log('actionFired',id,fullName,parkCode,stateCode )
     return{
         type: LOCATION,
         payload:{
-            lat, 
-            lon,
-            city,
-            stat,
+            id,
+            fullName,
+            parkCode, 
+            stateCode,
+            
         }
     }
 
