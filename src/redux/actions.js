@@ -1,5 +1,5 @@
 import { LOCATION } from "./actionTypes";
-export const setLocation =({id,fullName,parkCode,stateCode}) =>{
+export const setLocation =({id,fullName,parkCode,stateCode, imageUrl}) =>{
     console.log('actionFired',id,fullName,parkCode,stateCode )
     return{
         type: LOCATION,
@@ -8,7 +8,7 @@ export const setLocation =({id,fullName,parkCode,stateCode}) =>{
             fullName,
             parkCode, 
             stateCode,
-            
+            imageUrl
         }
     }
 

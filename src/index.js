@@ -5,9 +5,11 @@ import './index.css';
 import App from './App';
 import store from './redux/store'
 import BaseLayout from './components/layouts/BaseLayout';
-import Parks from './components/Parks'
+import Favorites from './components/Favorites'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Park from './components/Park';
+import './App.css';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16,7 +18,8 @@ ReactDOM.render(
         <BaseLayout>
           <Switch>
             <Route exact path='/' component={App}/>
-            <Route path='/favorites' component={Parks}/>
+            <Route path='/favorites' component={Favorites}/>
+            <Route path='/Park/:parkcode' component={Park}/>
           </Switch>
         </BaseLayout>
       </Router>
