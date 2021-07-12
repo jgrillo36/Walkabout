@@ -28,25 +28,15 @@ export default function Park() {
 
 
     },[setPark])
-    console.log(park)
-
-
-
-
-
-
-
-
-
-
+    console.log(park[0])
 
 
     return (
         <div>
             
         
-            {/* <h1> {park[0].description} </h1> */}
-            <h2> Park location</h2>
+            <h1>Park name</h1>
+            <h2>Park Location</h2>
             <h2>Park decscription</h2>
             <h2>Webcam</h2>
           

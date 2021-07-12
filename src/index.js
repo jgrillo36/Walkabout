@@ -4,25 +4,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import store from './redux/store'
-import BaseLayout from './components/layouts/BaseLayout';
-import Favorites from './components/Favorites'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
+
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Park from './components/Park';
+
 import './App.css';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
-        <BaseLayout>
-          <Switch>
-            <Route exact path='/' component={App}/>
-            <Route path='/favorites' component={Favorites}/>
-            <Route path='/Park/:parkcode' component={Park}/>
-          </Switch>
-        </BaseLayout>
-      </Router>
+      <App />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

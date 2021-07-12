@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Search from './components/Search'
+import BaseLayout from "./components/layouts/BaseLayout";
 
 
 function App() {
   return (
     <div className="App">
-      <Search />
+      <BaseLayout />
 
     </div>
   );
