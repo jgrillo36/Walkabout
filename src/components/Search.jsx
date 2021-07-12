@@ -39,8 +39,8 @@ export class Search extends Component {
     }
     render() {
         return (
-            <div>
-                 <Navbar bg="dark" variant="dark">
+            <div style={ { backgroundColor: '#4a9557'} }>
+                 {/* <Navbar bg="dark" variant="dark">
     <Container>
     <Navbar.Brand href="#home">Navbar</Navbar.Brand>
     <Nav className="me-auto">
@@ -49,7 +49,7 @@ export class Search extends Component {
       <Nav.Link href="#pricing">Pricing</Nav.Link>
     </Nav>
     </Container>
-  </Navbar>
+  </Navbar> */}
   
                  <form onSubmit = {(e) => this._handleSubmit(e)}>
                <label> Location 
@@ -65,6 +65,7 @@ export class Search extends Component {
                 </button>
             </form>
                 <Results parks={this.state.parks} />
+                 <img src="/images.jpeg"></img>
 
                 
             </div>
