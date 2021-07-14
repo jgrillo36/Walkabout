@@ -6,7 +6,7 @@ import { Card, Button, CardDeck } from "react-bootstrap";
 const Result = (props) => {
   const dispatch = useDispatch();
   const handleClick = (id, fullName, parkCode, stateCode, imageUrl) => {
-    console.log("buttonClick", id, fullName, parkCode, stateCode);
+    // console.log("buttonClick", id, fullName, parkCode, stateCode);
     dispatch(
       setLocation({
         id: id,

@@ -17,7 +17,7 @@ const Parks = () => {
           
      
             {recentSearches.map(park => {
-                console.log(park);
+                // console.log(park);
                return (<Favorite park={park} />)
             })}
      

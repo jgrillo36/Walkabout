@@ -9,7 +9,7 @@ const intialState =
 
 const locationReducer = (state = intialState, action) => { 
 
-    console.log('ACTION FIRING: ', action);
+    // console.log('ACTION FIRING: ', action);
     
     switch(action.type){
         case LOCATION: {

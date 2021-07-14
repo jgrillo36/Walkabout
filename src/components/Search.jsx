@@ -26,7 +26,7 @@ export class Search extends Component {
     }
      _handleSubmit = (e) =>{
         e.preventDefault();
-        console.log('button is working')
+        // console.log('button is working')
         fetch(`https://developer.nps.gov/api/v1/parks?stateCode=${this.state.stateCode}&api_key=9LM6ZhHeG6sKKnKjV5pzSRPS8b0DGfghndyl6m9a`)
         .then(response => response.json())
         .then(natParkData => {console.log(natParkData)
