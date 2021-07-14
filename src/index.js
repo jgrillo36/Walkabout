@@ -9,6 +9,7 @@ import Favorites from './components/Favorites'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Park from './components/Park';
+import Webcam from './components/Webcam';
 import './App.css';
 
 ReactDOM.render(
@@ -19,7 +20,7 @@ ReactDOM.render(
           <Switch>
             <Route exact path='/' component={App}/>
             <Route path='/favorites' component={Favorites}/>
-            <Route path='/Park/:parkcode' component={Park}/>
+            <Route path='/webcam/:parkCode/:stateCode/:parkId' component={Webcam}/>
           </Switch>
         </BaseLayout>
       </Router>
